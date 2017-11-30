@@ -1,0 +1,32 @@
+{
+  "name": "udacity-crp-portfolio",
+  "version": "1.0.0",
+  "description": "Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiainbytes/udacity-crp-portfolio.git"
+  },
+  "author": "Claudia Estupinan Forero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiainbytes/udacity-crp-portfolio/issues"
+  },
+  "homepage": "https://github.com/claudiainbytes/udacity-crp-portfolio#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-imagemin": "^4.0.0"
+  },
+  "dependencies": {
+    "imagemin": "^5.3.1",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-optipng": "^5.2.1",
+    "imagemin-svgo": "^6.0.0"
+  }
+}
