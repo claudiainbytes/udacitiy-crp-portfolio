@@ -13,7 +13,7 @@ The goal of this project is optimize it for speed. The portfolio must be rendere
 To get started, check out the repository and inspect the code.
 
 Clone this repo in your local machine, go into the folder and you can see two folders(src and dist):
-```
+```bash
   git clone https://github.com/claudiainbytes/udacity-crp-portfolio.git
 
 ```
@@ -25,17 +25,34 @@ Some useful tips to help you get started:
 1. Check out the repository
 1. To inspect the site on your phone, you can run a local server
 
+For src folder (no-optimized site/in process to be optimized):
+
   ```bash
-  $> cd /path/to/your-project-folder
+  $> cd /path/to/udacity-crp-portfolio/src
   $> python -m SimpleHTTPServer 8080
+  ```
+
+For dist folder( optimized site):
+
+  ```bash
+  $> cd /path/to/udacity-crp-portfolio/dist
+  $> python -m SimpleHTTPServer 3000
   ```
 
 1. Open a browser and visit localhost:8080
 2. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
 
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ./ngrok http 8080
+For src folder (no-optimized site/in process to be optimized):
+  ```bash
+  $> cd /path/to/udacity-crp-portfolio/dist
+  $> ./ngrok http 3000
+  ```
+
+For dist folder( optimized site):
+
+  ```bash
+  $> cd /path/to/udacity-crp-portfolio/dist
+  $> ./ngrok http 3000
   ```
 
 3. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
@@ -54,32 +71,86 @@ has defined the task that I want to do.
 
 ## Step 2. Installing GULP
 
-```
+```bash
 sudo npm install gulp-cli -g
 sudo npm install gulp -D
 ```
 ## Step 3. Installing this dependencies
 
-```
+```bash
 sudo npm install pump -g
 sudo npm install sharp -g
 ```
 If you have some problems with some graphics dependencies, please install:
 
-```
+```bash
 sudo npm install imagemin  imagemin-jpegtran imagemin-svgo imagemin-gifsicle imagemin-optipng jpegtran-bin optipng-bin --save --unsafe-perm=true --allow-root
 ```
-## Step 4. Execute the package.json
 
+## Step4. IMPORTANT! Install GraphicsMagick
+
+For OSX systems you can use [More info here](http://macappstore.org/graphicsmagick/):
+
+```bash
+brew install graphicsmagick
 ```
+
+For Ubuntu:
+
+```bash
+sudo apt-get install python-software-properties
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:rwky/graphicsmagick
+sudo apt-get update
+sudo apt-get install graphicsmagick
+```
+
+## Step 5. Execute the package.json to create node_modules folder
+
+```bash
 sudo npm install
 ```
 
 ## Step 5. Running task
 
+If you write some of this comands in console, on the project root folder
 
+```bash
+gulp
+```
+Executes the follow tasks in this order:
+- minify-fonts
+- minify-css
+- pizza-minify-css
+- minify-html
+- pizza-minify-html
+- minify-js
+- pizza-minify-js
+- cache-bust
 
+To optimize portfolio images, you should execute this commands in this order:
 
+```bash
+gulp clean-srcset
+gulp responsive-images
+gulp imagemin
+```
+
+To optimize pizza view images, you should execute this commands in this order:
+
+```bash
+gulp pizza-clean-srcset
+gulp pizza-responsive-images
+gulp pizza-imagemin
+```
+
+## Problems with Gulp or any NPM dependency
+
+You can execute
+
+```bash
+sudo npm rebuild
+```
 
 #### Initial state
 
