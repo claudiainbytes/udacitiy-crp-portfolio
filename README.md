@@ -1,5 +1,5 @@
-Website Performance Optimization portfolio project
-==================================================
+Website Performance Optimization Dua Lipa's Portfolio Project
+=============================================================
 
 The goal of this project is optimize it for speed. The portfolio must be rendered as quicky as possible by applying CRP (Critical Rendering Path) techniques.
 
@@ -42,7 +42,48 @@ Some useful tips to help you get started:
 
 Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
-####
+#### Customization
+
+I used [Gulp Task Runner](https://github.com/gulpjs/gulp) to optimize the whole portfolio. Gulp is base on pipe streams. Gulp works with two files: the package.json and the gulpfile.js. The last one
+has defined the task that I want to do.
+
+## Step 1. Before start, you have to install
+
+- node (v8.9.1)
+- npm  (v5.5.1)
+
+## Step 2. Installing GULP
+
+```
+sudo npm install gulp-cli -g
+sudo npm install gulp -D
+```
+## Step 3. Installing this dependencies
+
+```
+sudo npm install pump -g
+sudo npm install sharp -g
+```
+If you have some problems with some graphics dependencies, please install:
+
+```
+sudo npm install imagemin  imagemin-jpegtran imagemin-svgo imagemin-gifsicle imagemin-optipng jpegtran-bin optipng-bin --save --unsafe-perm=true --allow-root
+```
+## Step 4. Execute the package.json
+
+```
+sudo npm install
+```
+
+## Step 5. Running task
+
+
+
+
+
+#### Initial state
+
+#### Final state
 
 
 
