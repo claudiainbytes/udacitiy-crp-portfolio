@@ -2,6 +2,4 @@ ngrok
 node_modules/
 package-lock.json
 src/img/srcset
-dist/img/srcset
 src/views/images/srcset
-dist/views/images/srcset

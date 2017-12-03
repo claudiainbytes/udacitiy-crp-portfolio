@@ -44,8 +44,8 @@ For dist folder( optimized site):
 
 For src folder (no-optimized site/in process to be optimized):
   ```bash
-  $> cd /path/to/udacity-crp-portfolio/dist
-  $> ./ngrok http 3000
+  $> cd /path/to/udacity-crp-portfolio/src
+  $> ./ngrok http 8080
   ```
 
 For dist folder( optimized site):
@@ -66,6 +66,7 @@ has defined the task that I want to do.
 
 ## Step 1. Before start, you have to install
 
+- Python (v2.7)
 - node (v8.9.1)
 - npm  (v5.5.1)
 
@@ -152,13 +153,25 @@ You can execute
 sudo npm rebuild
 ```
 
-#### Initial state
+## Initial state
 
-#### Final state
+No optimized CRP analysis [Click Here!](https://docs.google.com/document/d/1DvGxhN3kCA5f8K88sdbSXMN1HK8UhtkRkeOE-zvwmlY/edit?usp=sharing)
 
+PageSpeed Insights
 
+- Mobile: Poor 51/100
+- Desktop: Poor 58/100
 
-### Optimization Tips and Tricks
+## Final state
+
+PageSpeed Insights
+
+- Mobile: Needs Work 83/100
+- Desktop: Good 90/100
+
+![alt PageSpeed Insight Final State](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/finalstate.png)
+
+## Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
 * [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
 * [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
@@ -169,3 +182,4 @@ sudo npm rebuild
 * <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
 * <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
 * <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
+
