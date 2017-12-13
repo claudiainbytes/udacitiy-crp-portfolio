@@ -190,6 +190,11 @@ PageSpeed Insights
 
 ![alt PageSpeed Insight Final State Pizza.html Desktop](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_pizza_desktop.png)
 
+## Time to resize Pizza.html
+
+![alt Time to resize Pizza.html](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/pizza_time.png)
+
+
 ## Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
 * [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
