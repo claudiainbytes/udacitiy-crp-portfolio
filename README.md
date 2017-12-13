@@ -172,11 +172,21 @@ PageSpeed Insights
 
 PageSpeed Insights
 
+- Mobile: Good 91/100
+
 ![alt PageSpeed Insight Final State Mobile](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_mobile.png)
+
+- Desktop: Good 93/100
 
 ![alt PageSpeed Insight Final State Desktop](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_desktop.png)
 
+## Final state Pizza.html
+
+- Mobile: Good 86/100
+
 ![alt PageSpeed Insight Final State Pizza.html Mobile](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_pizza_mobile.png)
+
+- Desktop: Good 88/100
 
 ![alt PageSpeed Insight Final State Pizza.html Desktop](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_pizza_desktop.png)
 
