@@ -1,9 +1,14 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
   <meta http-equiv="Cache-control" content="public">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dua Lipa's pizzeria">
+  <meta name="author" content="Claudia EF">
+  <!-- inline dist/views/css/style.css -->
+  <link rel="stylesheet" href="css/style.css" media="all" inline>
+  <!-- inline dist/views/css/bootstrap-grid.css -->
+  <link rel="stylesheet" href="css/bootstrap-grid.css" media="all" inline>
 </head>
 
 <body>
@@ -105,7 +110,7 @@
         <div id="randomPizzas" class="row">
           <div id="pizza0" class="randomPizzaContainer" style="width:33.33%; height: 325px;">
             <div style="width:35%">
-              <img src="images/pizza.png" class="img-responsive">
+              <img src="images/pizza.png" class="img-responsive" srcset="images/srcset/pizza-xs-2x.jpg 480w, images/srcset/pizza-s-2x.jpg 768w, images/srcset/pizza-m-2x.jpg 1024w, images/srcset/pizza-l-2x.jpg 1280w" alt="pizza" sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px">
             </div>
             <div style="width:65%">
               <h4>The New Rules Special</h4>
@@ -122,7 +127,7 @@
           </div>
           <div id="pizza1" class="randomPizzaContainer" style="width:33.33%; height: 325px;">
             <div style="width:35%">
-              <img src="images/pizza.png" class="img-responsive">
+              <img src="images/pizza.png" class="img-responsive" srcset="images/srcset/pizza-xs-2x.jpg 480w, images/srcset/pizza-s-2x.jpg 768w, images/srcset/pizza-m-2x.jpg 1024w, images/srcset/pizza-l-2x.jpg 1280w" alt="pizza" sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px">
             </div>
             <div style="width:65%">
               <h4>The Celebrity Special</h4>
@@ -138,7 +143,8 @@
     </div>
     <div id="footer" class="col-md-12">Thanks for visiting! &copy; 2014 Udacity</div>
   </div>
-  <script type="text/javascript" src="js/main.js"></script>
+  <!-- inline src/views/js/main.js -->
+  <script type="text/javascript" src="js/main.js" inline></script>
 </body>
 
 </html>

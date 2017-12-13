@@ -122,11 +122,10 @@ gulp
 Executes the follow tasks in this order:
 - minify-fonts
 - minify-css
-- pizza-minify-css
-- minify-html
-- pizza-minify-html
+- inline-css-js
 - minify-js
 - pizza-minify-js
+- minify-html
 - cache-bust
 
 To optimize portfolio images, you should execute this commands in this order:
@@ -143,6 +142,13 @@ To optimize pizza view images, you should execute this commands in this order:
 gulp pizza-clean-srcset
 gulp pizza-responsive-images
 gulp pizza-imagemin
+```
+
+If you need optimize html pages
+
+```bash
+gulp inline-css-js
+gulp minify-html
 ```
 
 ## Problems with Gulp or any NPM dependency
@@ -166,10 +172,13 @@ PageSpeed Insights
 
 PageSpeed Insights
 
-- Mobile: Needs Work 83/100
-- Desktop: Good 90/100
+![alt PageSpeed Insight Final State Mobile](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_mobile.png)
 
-![alt PageSpeed Insight Final State](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/finalstate.png)
+![alt PageSpeed Insight Final State Desktop](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_desktop.png)
+
+![alt PageSpeed Insight Final State Pizza.html Mobile](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_pizza_mobile.png)
+
+![alt PageSpeed Insight Final State Pizza.html Desktop](https://github.com/claudiainbytes/udacity-crp-portfolio/blob/master/crp_analysis/insights_pizza_desktop.png)
 
 ## Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")

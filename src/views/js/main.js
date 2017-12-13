@@ -427,7 +427,12 @@ var resizePizzas = function(size) {
     var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
 
-    // Changes the slider value to a percent width
+    var newSize = sizeSwitcher(size) * 100;
+    var dx = (newSize - oldSize) * windowWidth;
+    return dx;
+  }
+
+  // Changes the slider value to a percent width
     function sizeSwitcher (size) {
       switch(size) {
         case "1":
@@ -441,18 +446,15 @@ var resizePizzas = function(size) {
       }
     }
 
-    var newSize = sizeSwitcher(size);
-    var dx = (newSize - oldSize) * windowWidth;
-
-    return dx;
-  }
-
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    //Declaring a variable for randomPizzaContainer class selector
+    // Declaring a variable for randomPizzaContainer class selector
     var rPC = document.getElementsByClassName("randomPizzaContainer");
+    // To avoid overload calling functions in memory each time in the for cycle, I've pulled out
+    // the function sizeSwitcher outside the iteration
+    var newWidth = ( sizeSwitcher(size) * 100 ) + "%";
     for (var i = 0; i < rPC.length; i++) {
-      rPC[i].style.width = (rPC[i].offsetWidth + determineDx(rPC[i], size)) + 'px';
+      rPC[i].style.width = newWidth;
     }
   }
 
@@ -526,11 +528,14 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
   var s = 256;
+  //Calculate the number of pizzas according to s (size between pizzas)
+  var cols = Math.floor(window.innerWidth / s);
+  var rows = Math.floor(window.innerHeight / 100);
+  var numPizzas = cols * rows;
   //Declaring a variable for movingPizzas1 id selector
   var movingPizzas1 = document.getElementById("movingPizzas1");
-  for (var i = 0, elem; i < 200; i++) {
+  for (var i = 0, elem; i < numPizzas; i++) {
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizzaslice.png";

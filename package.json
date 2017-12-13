@@ -26,10 +26,14 @@
     "gulp-fontmin": "^0.7.4",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^4.0.0",
+    "gulp-inject": "^4.3.0",
+    "gulp-inline-css": "^3.1.1",
+    "gulp-inline-source": "^3.1.0",
     "gulp-print": "^2.0.1",
     "gulp-responsive-images": "0.0.3",
     "gulp-srcset": "^1.1.0",
     "gulp-uglify": "^3.0.0",
+    "gulp-whitespace": "^0.1.0",
     "pump": "^1.0.3"
   },
   "dependencies": {

@@ -9,24 +9,26 @@ var gulp = require('gulp'),
     print = require('gulp-print'),
     fontmin = require('gulp-fontmin'),
     cachebust = require('gulp-cache-bust'),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    whitespace = require('gulp-whitespace'),
+    inlinesource = require('gulp-inline-source');
 
 var imgResSizes = [{
                         width: 480,
                         suffix: '-xs-2x',
-                        quality: 70
+                        quality: 60
                     }, {
                         width: 768,
                         suffix: '-s-2x',
-                        quality: 70
+                        quality: 60
                     }, {
                         width: 1024,
                         suffix: '-m-2x',
-                        quality: 70
+                        quality: 50
                     }, {
                         width: 1280,
                         suffix: '-l-2x',
-                        quality: 70
+                        quality: 60
                     }];
 
 //Delete files in img/srcset folder
@@ -105,9 +107,9 @@ gulp.task('minify-fonts', function () {
 
 //Minifying CSS Task
 gulp.task('minify-css', () => {
-  return gulp.src('./src/css/*.css')
+  return gulp.src(['./src/css/*.css', './src/views/css/*.css'])
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('./dist'));
 });
 
 //Minifying Pizza.css Task
@@ -117,16 +119,28 @@ gulp.task('pizza-minify-css', () => {
     .pipe(gulp.dest('./dist/views/css'));
 });
 
+//Inline CSS
+gulp.task('inline-css-js', function() {
+    return gulp.src('./src/**/*.html')
+        .pipe(inlinesource())
+        .pipe(gulp.dest('./dist'));
+});
+
+
 //Minifying HTML files
 gulp.task('minify-html', function() {
-  return gulp.src('./src/*.html')
+  return gulp.src('./dist/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(whitespace({
+            spacesToTabs: 4,
+            removeTrailing: true
+        }))
     .pipe(gulp.dest('./dist'));
 });
 
 //Minifying HTML Pizza.html
 gulp.task('pizza-minify-html', function() {
-  return gulp.src('./src/views/*.html')
+  return gulp.src('./dist/views/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./dist/views'));
 });
@@ -153,17 +167,20 @@ gulp.task('pizza-minify-js', function (cb) {
   );
 });
 
+
 //Cache Bust Task
 gulp.task('cache-bust', () => {
-    gulp.src('./dist/*/*.html')
+    gulp.src('./dist/**/*.html')
         .pipe(cachebust({
             type: 'timestamp'
         }))
         .pipe(gulp.dest('./dist'));
 });
 
+
 //Optimize Images
 gulp.task('optimize-images',['clean-srcset','responsive-images','imagemin','pizza-clean-srcset','pizza-responsive-images','pizza-imagemin']);
 
 // Default Task
-gulp.task('default', ['minify-fonts','minify-css','pizza-minify-css', 'minify-html', 'pizza-minify-html', 'minify-js', 'pizza-minify-js', 'cache-bust' ]);
+gulp.task('default', ['minify-fonts','minify-css','inline-css-js','minify-js','pizza-minify-js', 'minify-html', 'cache-bust' ]);
+
